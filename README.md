@@ -3,3 +3,5 @@ Eager-SGD is a decentralized asynchronous SGD. It utilizes novel partial collect
 
 # Reference
 This work was accepted as a regular paper of PPoPP'20. A preprint version can be downloaded from Arxiv: https://arxiv.org/pdf/1908.04207.pdf
+
+# The code will be released.
