@@ -17,3 +17,7 @@ If you use eager-SGD, cite us:
   year={2020}
 }
 ```
+
+License
+-------
+See [LICENSE](LICENSE).
