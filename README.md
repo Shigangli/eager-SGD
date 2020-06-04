@@ -7,12 +7,12 @@ Eager-SGD is a decentralized asynchronous SGD. It utilizes novel partial collect
 Publication
 -----------
 
-If you use eager-SGD, cite us:
+The work of eager-SGD is pulished in PPoPP'20. If you use eager-SGD, cite us:
 ```bibtex
 @inproceedings{li2020taming,
   title={Taming unbalanced training workloads in deep learning with partial collective operations},
   author={Li, Shigang and Ben-Nun, Tal and Girolamo, Salvatore Di and Alistarh, Dan and Hoefler, Torsten},
-  booktitle={Proceedings of the 25th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming (PPoPP'20)},
+  booktitle={Proceedings of the 25th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
   pages={45--61},
   year={2020}
 }
