@@ -1,12 +1,12 @@
 Eager-SGD
 ---------
 
-Eager-SGD is a decentralized asynchronous SGD. It utilizes novel partial collectives operations (partial allreduce) to accumulate the gradients across all the processes. Different from the traditional collectives operations (such as MPI, NCCL), a partial collective is an asynchronous operation where a subset of the processes can trigger and complete the collective operation. Due to the asynchrony feature of eager-SGD, it can better handle the deep learning training with load imbalance.
+Eager-SGD is a decentralized asynchronous SGD. It utilizes novel partial collectives operations (partial allreduce) to accumulate the gradients across all the processes. Different from the traditional collectives operations (such as MPI, NCCL), a partial collective is an asynchronous operation where a subset of the processes can trigger and contribute the latest data to the collective operation. Eager-SGD may bring staleness to the gradients. Thanks to our sophisticated implementation of solo-allreduce and majority-allreduce, the staleness is bounded and therefore eager-SGD is stale-synchronous. Due to the asynchrony feature of eager-SGD, it can better handle the deep learning training with load imbalance.
 
 Demo
 ---------
-A script to run eager-SGD on multi-node machines with SLURM job scheduler can be found [here](https://github.com/Shigangli/eager-SGD/blob/master/test-models/tf-models-r1.11/official/resnet/test_scripts_imagenet/daint_eagersgd_imagenet.sh).
-Generally, the [customized optimizers](https://github.com/Shigangli/eager-SGD/blob/master/test-models/tf-models-r1.11/official/utils/) (e.g., gradient averaging using solo/majority-allreduce) can also be used to other models, namely by overriding the default optimizer using the customized optimizers.
+A script to run eager-SGD on ResNet-50/ImageNet with SLURM job scheduler can be found [here](https://github.com/Shigangli/eager-SGD/blob/master/test-models/tf-models-r1.11/official/resnet/test_scripts_imagenet/daint_eagersgd_imagenet.sh).
+Generally, to evaluate other neural network models with the [customized optimizers](https://github.com/Shigangli/eager-SGD/blob/master/test-models/tf-models-r1.11/official/utils/) (e.g., gradient averaging using solo/majority-allreduce), one can simply wrap the default optimizer using the customized optimizers. See the example for ResNet-50 [here](https://github.com/Shigangli/eager-SGD/blob/master/test-models/tf-models-r1.11/official/resnet/resnet_run_loop_solo_imagenet_300.py#L384).
 
 Publication
 -----------
