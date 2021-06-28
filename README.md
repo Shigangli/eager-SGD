@@ -1,7 +1,7 @@
 Eager-SGD
 ---------
 
-**Eager-SGD** is a **decentralized asynchronous SGD** for distributed deep learning training. It utilizes novel partial collectives operations (partial allreduce) to accumulate the gradients across all the processes. Different from the traditional collectives operations (such as MPI, NCCL), a partial collective is an asynchronous operation where a subset of the processes can trigger and contribute the latest data to the collective operation. 
+**Eager-SGD** is a **decentralized asynchronous SGD** for distributed deep learning training based on **gradient averaging**. It utilizes novel partial collectives operations (partial allreduce) to accumulate the gradients across all the processes. Different from the traditional collectives operations (such as MPI, NCCL), a partial collective is an asynchronous operation where a subset of the processes can trigger and contribute the latest data to the collective operation. 
 
 Eager-SGD may bring staleness to the gradients. Thanks to our sophisticated implementation of solo-allreduce and majority-allreduce, the **staleness is bounded** and therefore eager-SGD is stale-synchronous. Due to the asynchrony feature of eager-SGD, it can better handle the deep learning training with load imbalance. To the best of our knowledge, this is the first work that implements asynchronous and stale-synchronous decentralized SGD where the messages propagate to all nodes in one step.
 
