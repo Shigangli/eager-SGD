@@ -14,7 +14,7 @@ Generally, to evaluate other neural network models with the [customized optimize
 
 Publication
 -----------
-The work of eager-SGD is pulished in PPoPP'20. See the paper for details. If you use eager-SGD, cite us:
+The work of eager-SGD is pulished in PPoPP'20. See the [paper](https://shigangli.github.io/files/ppopp20-eager-SGD-paper.pdf) for details. If you use eager-SGD, cite us:
 ```bibtex
 @inproceedings{li2020taming,
   title={Taming unbalanced training workloads in deep learning with partial collective operations},
